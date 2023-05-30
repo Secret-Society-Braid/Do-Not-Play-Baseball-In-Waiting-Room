@@ -1,4 +1,7 @@
-const Banner = () => {
+import React from "react";
+import "../styles/Banner.css";
+
+const Banner: React.FC = () => {
   
   const lines: string[] = [
     "劇場で野球をしては",
