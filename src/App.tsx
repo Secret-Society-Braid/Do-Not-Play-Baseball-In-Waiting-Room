@@ -1,10 +1,11 @@
 import './App.css'
+import Banner from './comp/banner'
 
 function App() {
 
   return (
     <>
-      <h1>Hello World!</h1>
+      <Banner />
     </>
   )
 }
