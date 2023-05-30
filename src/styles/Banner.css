@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+.banner {
+    writing-mode: vertical-rl;
+    position: fixed;
+    top: 15px;
+    left: calc(50% - 45px);
+}
+
+.banner-line {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    display: flex;
+    font-size: xx-large;
+    top: 10px;
+    font-family: 'Potta One', cursive;
+    color: #ccc;
+}
