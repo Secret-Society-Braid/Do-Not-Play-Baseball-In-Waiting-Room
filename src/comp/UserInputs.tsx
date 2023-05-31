@@ -1,8 +1,18 @@
 import { useState } from "react";
 import "../styles/userInputs.css";
+import MakePaper from './MakePaper';
 
 const UserInputs = () => {
+
   const [lineCount, setLineCount] = useState(3);
+
+  const [lines, setLines] = useState<string[]>(["test"]);
+
+  const handleSubmit = () => {
+    const inputs = document.querySelectorAll(".line-input");
+    const newLines = Array.from(inputs).map((input) => input.getAttributeNames);
+    setLines(newLines);
+  }
 
   return (
     <>
@@ -35,7 +45,10 @@ const UserInputs = () => {
         ))}
       </div>
       <div className="submit">
-        <input type="submit" value="貼り紙をつくる" />
+        <input type="submit" value="貼り紙をつくる" onClick={handleSubmit}/>
+      </div>
+      <div className="result">
+        <MakePaper {...lines} />
       </div>
     </>
   );
