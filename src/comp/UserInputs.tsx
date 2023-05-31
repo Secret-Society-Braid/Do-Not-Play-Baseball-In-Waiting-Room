@@ -35,7 +35,7 @@ const UserInputs = () => {
         ))}
       </div>
       <div className="submit">
-        <input type="submit" value="送信" />
+        <input type="submit" value="貼り紙をつくる" />
       </div>
     </>
   );

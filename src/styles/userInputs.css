@@ -37,5 +37,5 @@
     position: fixed;
     top: 360px;
     left: calc(70% + 20px);
-    width: 10%;
+    width: fit-content;
 }
