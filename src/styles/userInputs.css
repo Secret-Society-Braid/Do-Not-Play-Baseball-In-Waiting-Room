@@ -8,13 +8,6 @@
     width: 40%;
 }
 
-.line-counter h2 {
-    font-size: 2rem;
-    color: #ccc;
-    margin: 0 10;
-    text-align: center;
-}
-
 .line-inputs {
     display: flex;
     flex-direction: column;
