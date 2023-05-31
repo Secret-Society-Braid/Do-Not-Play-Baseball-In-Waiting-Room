@@ -8,20 +8,13 @@
     width: 40%;
 }
 
-.line-counter h2 {
-    font-size: 2rem;
-    color: #ccc;
-    margin: 0 10;
-    text-align: center;
-}
-
 .line-inputs {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     position: fixed;
-    top: 460px;
-    left: calc(50% - 10%);
+    top: 320px;
+    left: calc(10%);
 }
 
 .line-input {
@@ -35,7 +28,7 @@
     flex-direction: column;
     margin: 0 auto;
     position: fixed;
-    top: 360px;
-    left: calc(70% + 20px);
+    top: 520px;
+    left: calc(10% + 50px);
     width: fit-content;
 }
