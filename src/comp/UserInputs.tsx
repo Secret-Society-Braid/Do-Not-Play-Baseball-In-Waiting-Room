@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "../styles/userInputs.css";
-import { useDispatch } from "react-redux";
+import Result from "./Result";
 
 const UserInputs = () => {
 
   const [ firstLine, setFirstLine ] = useState<string>("");
   const [ secondLine, setSecondLine ] = useState<string>("");
   const [ thirdLine, setThirdLine ] = useState<string>("");
-
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -38,17 +36,8 @@ const UserInputs = () => {
           );
         })}
       </div>
-      <div className="submit">
-        <input type="submit" value="貼り紙をつくる" onClick={() => {
-          console.log(`firstLine: ${firstLine}`);
-          console.log(`secondLine: ${secondLine}`);
-          console.log(`thirdLine: ${thirdLine}`);
-          dispatch({ type: "lineResponder/setFirst", payload: firstLine });
-          dispatch({ type: "lineResponder/setSecond", payload: secondLine });
-          dispatch({ type: "lineResponder/setThird", payload: thirdLine });
-        }}/>
-      </div>
       <div className="result">
+        <Result firstLine={firstLine} secondLine={secondLine} thirdLine={thirdLine} />
       </div>
     </>
   );
