@@ -19,7 +19,6 @@ const UserInputs = () => {
                 placeholder={`${i + 1}行目`}
                 className="line-input"
                 onChange={(e) => {
-                  console.log(`detect change at line ${i + 1}: ${e.target.value}`);
                   switch (i) {
                     case 0:
                       setFirstLine(e.target.value);
@@ -37,6 +36,7 @@ const UserInputs = () => {
         })}
       </div>
       <div className="result">
+        こんな張り紙ができました！
         <Result firstLine={firstLine} secondLine={secondLine} thirdLine={thirdLine} />
       </div>
     </>
