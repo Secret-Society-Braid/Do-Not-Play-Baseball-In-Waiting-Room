@@ -3,16 +3,16 @@ import "../styles/userInputs.css";
 import Result from "./Result";
 
 const UserInputs = () => {
-
-  const [ firstLine, setFirstLine ] = useState<string>("");
-  const [ secondLine, setSecondLine ] = useState<string>("");
-  const [ thirdLine, setThirdLine ] = useState<string>("");
+  const [firstLine, setFirstLine] = useState<string>("");
+  const [secondLine, setSecondLine] = useState<string>("");
+  const [thirdLine, setThirdLine] = useState<string>("");
 
   return (
     <>
-      <div className="line-inputs">
-        {[...Array(3)].map((_, i: number) => {
-          return (
+      <div className="main">
+        <div className="line-inputs">
+          {[...Array(3)].map((_, i: number) => {
+            return (
               <input
                 type="text"
                 key={i}
@@ -32,12 +32,17 @@ const UserInputs = () => {
                   }
                 }}
               />
-          );
-        })}
-      </div>
-      <div className="result">
-        こんな張り紙ができました！
-        <Result firstLine={firstLine} secondLine={secondLine} thirdLine={thirdLine} />
+            );
+          })}
+        </div>
+        <div className="result">
+          こんな張り紙ができました！
+          <Result
+            firstLine={firstLine}
+            secondLine={secondLine}
+            thirdLine={thirdLine}
+          />
+        </div>
       </div>
     </>
   );
