@@ -4,3 +4,16 @@
   align-items: center;
   flex-direction: column;
 }
+
+input[type="button"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #666;
+}
