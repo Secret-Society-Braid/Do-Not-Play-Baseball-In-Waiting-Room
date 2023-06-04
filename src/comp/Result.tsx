@@ -1,4 +1,3 @@
-import { array } from "prop-types";
 import "../styles/result.css";
 
 const Result = (prop: { firstLine: string, secondLine: string, thirdLine: string}) => {
