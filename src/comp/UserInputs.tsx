@@ -7,6 +7,8 @@ const UserInputs = () => {
   const [secondLine, setSecondLine] = useState<string>("");
   const [thirdLine, setThirdLine] = useState<string>("");
 
+  const [isModified, setIsModified] = useState<boolean>(false);
+
   return (
     <>
       <div className="main">
@@ -19,6 +21,7 @@ const UserInputs = () => {
                 placeholder={`${i + 1}行目`}
                 className="line-input"
                 onChange={(e) => {
+                  setIsModified(true);
                   switch (i) {
                     case 0:
                       setFirstLine(e.target.value);
@@ -36,7 +39,7 @@ const UserInputs = () => {
           })}
         </div>
         <div className="result">
-          こんな張り紙ができました！
+          {isModified ? "こんな張り紙が出来ました！" : "ここに結果が表示されます"}
           <Result
             firstLine={firstLine}
             secondLine={secondLine}
