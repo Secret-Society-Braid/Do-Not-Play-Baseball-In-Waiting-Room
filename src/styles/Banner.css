@@ -2,9 +2,10 @@
 
 .banner {
     writing-mode: vertical-rl;
-    position: fixed;
-    top: 15px;
-    left: calc(50% - 45px);
+    display: flex;
+    flex-direction: column;
+    padding-left: calc(50vw - 80px);
+    padding-top: 15px;
 }
 
 .banner-line {
