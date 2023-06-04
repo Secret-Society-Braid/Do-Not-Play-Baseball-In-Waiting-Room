@@ -1,3 +1,4 @@
+import { array } from "prop-types";
 import "../styles/result.css";
 
 const Result = (prop: { firstLine: string, secondLine: string, thirdLine: string}) => {
@@ -16,24 +17,33 @@ const Result = (prop: { firstLine: string, secondLine: string, thirdLine: string
     thirdLineSplited.length
   );
 
+  const resultArr: string[] = [`┏${" ━".repeat(3)} ┓\n`];
+
+  const resultLines: string[] = [...Array(longestLength)].map((_, i: number) => {
+    return `${thirdLineSplited[i] ? `┃ ${thirdLineSplited[i]} ` : "┃ 　 "}${secondLineSplited[i] ? `${secondLineSplited[i]} ` : "　 "}${firstLineSplited[i] ? `${firstLineSplited[i]} ┃` : "　 ┃"}\n`
+  });
+
+  resultArr.push(...resultLines);
+
+  resultArr.push(`┗${" ━".repeat(3)} ┛\n`);
+
   return (
     <>
       <pre>
-        {`┏${" ━".repeat(3)} ┓\n`} 
-        {[...Array(longestLength)].map((_, i: number) => {
+        {resultArr.map((line: string) => {
           return (
             <>
-              ┃
-              {thirdLineSplited[i] ? ` ${thirdLineSplited[i]} ` : " 　 "}
-              {secondLineSplited[i] ? `${secondLineSplited[i]} ` : "　 "}
-              {firstLineSplited[i] ? `${firstLineSplited[i]} ` : "　 "}
-              ┃
-              <br />
+              {line}
             </>
           )
         })}
-        {`┗${" ━".repeat(3)} ┛`}
       </pre>
+      <input type="button" value="結果をコピー！" className={"copy"} onClick={() => {
+        navigator.clipboard.writeText(resultArr.join(""));
+      }} />
+      <input type="button" value="Twitterへ張り出す！" className="twitter-intent" onClick={() => {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(resultArr.join(""))}&hashtags=${encodeURIComponent("控え室で野球をしてはいけませんジェネレーター")}&url=${encodeURIComponent("https://secret-society-braid.github.io/Do-Not-Play-Baseball-In-Waiting-Room/")}`);
+      }} />
     </>
   );
 }
